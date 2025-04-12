@@ -4,21 +4,21 @@ Description: >
   con ALB. Usa la VPC por defecto y el LabRole existente.
 
 Parameters:
-  EnvironmentName: staging
+  EnvironmentName:
     Type: String
     Description: "Nombre del entorno (ej: staging, production). Usado para nombrar recursos."
     AllowedValues: [staging, production]
   DockerImageUri:
     Type: String
     Description: "URI completo de la imagen Docker a desplegar (ej: usuario/repo:tag)."
-  LabRoleArn: arn:aws:iam::676014420341:role/LabRole
+  LabRoleArn:
     Type: String
     Description: ARN completo del rol IAM 'LabRole' existente en la cuenta.
   VpcId:
-    Type: vpc-05420203131435c28
+    Type: AWS::EC2::VPC::Id
     Description: ID de la VPC por defecto donde desplegar.
   SubnetIds:
-    Type: List<subnet-09d538ecf282b4015, subnet-02f8652dddcc6ea57>
+    Type: List<AWS::EC2::Subnet::Id>
     Description: Lista de al menos DOS IDs de subredes PuBLICAS de la VPC por defecto en diferentes AZs.
 
 Resources:
