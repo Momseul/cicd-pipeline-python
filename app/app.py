@@ -1,5 +1,5 @@
 # app/app.py
-""" Module that initialize calc application """
+"""Module that initialize calc application"""
 
 from flask import Flask, render_template, request
 from .calculadora import sumar, restar, multiplicar, dividir
@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 def index():
     """Handles hhtp requests: GET for display the main calc page and post to
-       operate the given numbers"""
+    operate the given numbers"""
     resultado = None
     if request.method == "POST":
         try:

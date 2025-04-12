@@ -1,5 +1,7 @@
 # app/calculadora.py
 """A collection of basic arithmetic functions"""
+
+
 def sumar(a, b):
     """returns the sum of two numbers"""
     return a + b
